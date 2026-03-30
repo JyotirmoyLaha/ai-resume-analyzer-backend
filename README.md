@@ -170,6 +170,6 @@ ML-based skill inference (Phase 2)
 Jyotirmoy Laha
 BCA Student | Aspiring Software Engineer
 
-📧 Email: jyotirmoylaha713128@gmail.com
+📧 Email: jyotirmoy713128@gmail.com
 
 🌐 Portfolio: https://ai-resume-analyzer-hhhb.onrender.com
