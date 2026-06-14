@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto" style="background: #0B1120; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); font-family: 'Inter', system-ui, sans-serif; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#0EA5E9" />
+    </linearGradient>
+    <linearGradient id="roseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(124,58,237,0.3)" />
+      <stop offset="100%" stop-color="rgba(34,211,238,0.1)" />
+    </linearGradient>
+
+    <!-- Glowing filters -->
+    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .glow-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    .glow-hover:hover {
+      transform: translateY(-5px);
+      filter: drop-shadow(0 10px 15px rgba(124,58,237,0.25));
+    }
+    .pulse {
+      animation: pulseGlow 2.5s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { filter: drop-shadow(0 0 3px rgba(124,58,237,0.2)); opacity: 0.8; }
+      50% { filter: drop-shadow(0 0 10px rgba(124,58,237,0.5)); opacity: 1; }
+    }
+    .line-flow {
+      stroke: url(#borderGradient);
+      stroke-dasharray: 6 3;
+      animation: dash 20s linear infinite;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -1000; }
+    }
+  </style>
+
+  <!-- Atmospheric Orbs -->
+  <circle cx="200" cy="300" r="130" fill="#6366F1" opacity="0.08" filter="blur(80px)" />
+  <circle cx="600" cy="100" r="140" fill="#F43F5E" opacity="0.06" filter="blur(90px)" />
+
+  <!-- Background grid pattern -->
+  <path d="M 0,40 L 800,40 M 0,80 L 800,80 M 0,120 L 800,120 M 0,160 L 800,160 M 0,200 L 800,200 M 0,240 L 800,240 M 0,280 L 800,280 M 0,320 L 800,320 M 0,360 L 800,360" stroke="rgba(255,255,255,0.015)" stroke-width="1" />
+  <path d="M 80,0 L 80,400 M 160,0 L 160,400 M 240,0 L 240,400 M 320,0 L 320,400 M 400,0 L 400,400 M 480,0 L 480,400 M 560,0 L 560,400 M 640,0 L 640,400 M 720,0 L 720,400" stroke="rgba(255,255,255,0.015)" stroke-width="1" />
+
+  <!-- Flow Lines -->
+  <!-- Main Pipeline line -->
+  <path d="M 190,140 H 260" stroke-width="2" class="line-flow" />
+  <path d="M 410,140 H 480" stroke-width="2" class="line-flow" />
+  <path d="M 630,140 H 700" stroke-width="2" class="line-flow" />
+  <path d="M 335,270 V 180" stroke-width="2" class="line-flow" />
+  <path d="M 555,270 V 180" stroke-width="2" class="line-flow" />
+
+  <!-- TITLE -->
+  <text x="400" y="35" text-anchor="middle" font-size="18" font-weight="800" fill="#FFFFFF" letter-spacing="2">BACKEND ANALYSIS PIPELINE &amp; SCORING ENGINE</text>
+
+  <!-- PIPELINE STAGE 1: PDF Extractor -->
+  <g class="glow-hover" transform="translate(0, 0)">
+    <rect x="40" y="80" width="150" height="120" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect x="55" y="95" width="120" height="24" rx="4" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" />
+    <text x="115" y="111" text-anchor="middle" font-size="11" font-weight="700" fill="#A78BFA">1. PDF Extractor</text>
+    
+    <text x="60" y="145" font-size="10" font-weight="600" fill="#E5E7EB">pdfplumber engine</text>
+    <text x="60" y="162" font-size="9" fill="#94A3B8">Extracts raw resume text,</text>
+    <text x="60" y="176" font-size="9" fill="#94A3B8">strips formatting noise.</text>
+  </g>
+
+  <!-- PIPELINE STAGE 2: Skill Extractor -->
+  <g class="glow-hover" transform="translate(0, 0)">
+    <rect x="260" y="80" width="150" height="120" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect x="275" y="95" width="120" height="24" rx="4" fill="rgba(34,211,238,0.15)" stroke="rgba(34,211,238,0.3)" />
+    <text x="335" y="111" text-anchor="middle" font-size="11" font-weight="700" fill="#22D3EE">2. Regex NLP Engine</text>
+    
+    <text x="280" y="145" font-size="10" font-weight="600" fill="#E5E7EB">Pattern Matcher</text>
+    <text x="280" y="162" font-size="9" fill="#94A3B8">Extracts matched terms,</text>
+    <text x="280" y="176" font-size="9" fill="#94A3B8">prevents false positives.</text>
+  </g>
+
+  <!-- PIPELINE STAGE 3: Scoring Engine -->
+  <g class="glow-hover" transform="translate(0, 0)">
+    <rect x="480" y="80" width="150" height="120" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect x="495" y="95" width="120" height="24" rx="4" fill="rgba(244,63,94,0.15)" stroke="rgba(244,63,94,0.3)" />
+    <text x="555" y="111" text-anchor="middle" font-size="11" font-weight="700" fill="#FB7185">3. Weighted Matcher</text>
+    
+    <text x="500" y="145" font-size="10" font-weight="600" fill="#E5E7EB">Weight Assignments</text>
+    <text x="500" y="162" font-size="9" fill="#94A3B8">Critical = 3 | High = 2</text>
+    <text x="500" y="176" font-size="9" fill="#94A3B8">Medium = 1 | Low = 0.5</text>
+  </g>
+
+  <!-- PIPELINE STAGE 4: Response JSON -->
+  <g class="glow-hover" transform="translate(0, 0)">
+    <rect x="700" y="80" width="60" height="120" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+    <path d="M 720,105 H 740 M 720,120 H 740 M 720,135 H 735" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
+    <text x="730" y="165" text-anchor="middle" font-size="10" font-weight="700" fill="#94A3B8">JSON</text>
+  </g>
+
+  <!-- SUB-COMPONENTS DATABASE -->
+  <g class="glow-hover" transform="translate(0, 0)">
+    <rect x="260" y="270" width="150" height="70" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+    <text x="335" y="295" text-anchor="middle" font-size="10" font-weight="700" fill="#94A3B8">ROLE CONFIGS</text>
+    <text x="335" y="312" text-anchor="middle" font-size="8" fill="#64748B">Predefined requirements &amp; weights</text>
+  </g>
+
+  <!-- FORMULA DETAIL CARD -->
+  <g class="glow-hover" transform="translate(0, 0)">
+    <rect x="450" y="270" width="210" height="70" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+    <text x="555" y="295" text-anchor="middle" font-size="10" font-weight="700" fill="#94A3B8">MATCH SCORE FORMULA</text>
+    <rect x="465" y="305" width="180" height="20" rx="4" fill="#0B1120" stroke="rgba(255,255,255,0.08)" />
+    <text x="555" y="318" text-anchor="middle" font-size="8" font-weight="800" fill="#34D399" letter-spacing="0.5">SCORE % = (Σ matched_w / Σ required_w) * 100</text>
+  </g>
+
+  <!-- Interactive Info Footer -->
+  <text x="400" y="375" text-anchor="middle" font-size="10" font-weight="600" fill="#64748B">💡 Explainable AI logic ensures highly transparent match scoring calculations tailored to actual industry requirements.</text>
+</svg>
