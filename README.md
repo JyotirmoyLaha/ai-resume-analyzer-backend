@@ -1,5 +1,11 @@
 # 🧠 AI Resume Analyzer & Skill Gap Finder
 
+<div align="center">
+  <img src="pipeline.svg" alt="Backend Pipeline Engine" width="100%">
+</div>
+
+<br>
+
 A **rule-based AI Resume Analyzer** that extracts skills from resumes, compares them against role-specific requirements, calculates a **weighted match score**, and generates **actionable improvement recommendations**.
 
 Built with **Python**, designed with **real hiring logic**, not buzzwords.
